@@ -18,7 +18,7 @@ class TransactionService (private val transactionRepository: TransactionReposito
                           private val RentalRepository: RentalRepository) {
     fun getAllTransactions() = transactionRepository.findAll()
     fun getTransactionById(id: Long) = transactionRepository.findById(id).orElse(null)
-    fun saveTransaction(transaction: com.ilr.thekebe.data.Transaction) = transactionRepository.save(transaction)
+    fun saveTransaction(transaction: Transaction) = transactionRepository.save(transaction)
     fun deleteTransaction(id: Long) = transactionRepository.deleteById(id)
 
     @Transactional
