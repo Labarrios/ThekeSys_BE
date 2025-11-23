@@ -12,6 +12,7 @@ import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
+import java.time.LocalDate
 
 @Entity
 @Table(name = "Rental")
@@ -26,13 +27,13 @@ class Rental (
     open var transaction: Transaction? = null,
 
     @Column(name = "start_date", columnDefinition = "DATE", nullable = false)
-    var startDate: java.time.LocalDate? = null,
+    var startDate: LocalDate? = null,
 
     @Column(name = "end_date", columnDefinition = "DATE", nullable = false)
-    var endDate: java.time.LocalDate? = null,
+    var endDate: LocalDate? = null,
 
     @Column(name = "return_date", columnDefinition = "DATE")
-    var returnDate: java.time.LocalDate? = null,
+    var returnDate: LocalDate? = null,
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 50, nullable = false)
