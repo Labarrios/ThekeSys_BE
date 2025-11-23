@@ -31,5 +31,12 @@ class TransactionController (private val transactionService: TransactionService)
         return ResponseEntity.status(HttpStatus.CREATED).body(response)
     }
 
+    @PostMapping("/cancel/{id}")
+    fun cancelTransaction(@RequestBody id: Long): ResponseEntity<String> {
+        //val response = transactionService.cancelTransaction(id)
+        return ResponseEntity.status(HttpStatus.OK).body("Cancelled")
+    }
+    
+
 
 }
