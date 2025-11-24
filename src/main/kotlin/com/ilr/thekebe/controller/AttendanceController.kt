@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/employee/attendance")
 class AttendanceController {
+
     @PostMapping("/clock-in")
     fun clockIn(@RequestParam employeeId: Long): ResponseEntity<String> {
         // Logic to record clock-in time for the employee
