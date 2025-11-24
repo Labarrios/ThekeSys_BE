@@ -2,6 +2,7 @@ package com.ilr.thekebe.controller
 
 import com.ilr.thekebe.data.Employee
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
@@ -25,6 +26,13 @@ class EmployeeController {
         // Here you would typically update the employee in the database
         // For this example, we'll just return a success message
         return ResponseEntity.ok("Employee updated successfully")
+    }
+
+    @DeleteMapping("/{id}")
+    fun deleteEmployee(id: Long): ResponseEntity<String> {
+        // Here you would typically mark the employee as inactive in the database
+        // For this example, we'll just return a success message
+        return ResponseEntity.ok("Employee with id $id deleted successfully")
     }
 
     @GetMapping("/{id}")

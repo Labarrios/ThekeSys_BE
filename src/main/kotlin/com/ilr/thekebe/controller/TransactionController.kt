@@ -4,6 +4,7 @@ import com.ilr.thekebe.data.request.TransactionRequest
 import com.ilr.thekebe.repository.service.TransactionService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -31,12 +32,11 @@ class TransactionController (private val transactionService: TransactionService)
         return ResponseEntity.status(HttpStatus.CREATED).body(response)
     }
 
-    @PostMapping("/cancel/{id}")
+    @DeleteMapping("/cancel/{id}")
     fun cancelTransaction(@RequestBody id: Long): ResponseEntity<String> {
         //val response = transactionService.cancelTransaction(id)
         return ResponseEntity.status(HttpStatus.OK).body("Cancelled")
     }
-    
 
 
 }

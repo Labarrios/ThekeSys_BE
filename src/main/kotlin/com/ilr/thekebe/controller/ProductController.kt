@@ -3,6 +3,7 @@ package com.ilr.thekebe.controller
 import com.ilr.thekebe.data.Inventory
 import com.ilr.thekebe.data.Product
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -35,6 +36,13 @@ class ProductController {
         // For this example, we'll just return a dummy product
         val product = Product(id = id, name = "Sample Product", price = 9.99)
         return ResponseEntity.ok(product)
+    }
+
+    @DeleteMapping("/{id}")
+    fun deleteProduct(@PathVariable id: Long): ResponseEntity<String> {
+        // Here you would typically mark the product as discontinued in the database
+        // For this example, we'll just return a success message
+        return ResponseEntity.ok("Product with id $id discontinued successfully")
     }
 
     @GetMapping("/")

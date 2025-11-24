@@ -2,6 +2,7 @@ package com.ilr.thekebe.controller
 
 import com.ilr.thekebe.data.AuthorArtist
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -26,6 +27,13 @@ class AuthorArtistController {
         // Here you would typically update the authorArtist in the database
         // For this example, we'll just return a success message
         return ResponseEntity.ok("Author/Artist updated successfully")
+    }
+
+    @DeleteMapping("/{id}")
+    fun deleteAuthorArtist(@PathVariable id: Long): ResponseEntity<String> {
+        // Here you would typically mark the authorArtist as canceled in the database
+        // For this example, we'll just return a success message
+        return ResponseEntity.ok("Author/Artist with id $id canceled successfully")
     }
 
     @GetMapping("/{id}")
